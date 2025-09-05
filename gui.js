@@ -1,4 +1,4 @@
-import Player from "../src/player.js";
+import Player from "./src/player.js";
 
 const player = new Player("Umar");
 const computer = new Player("Computer", true);
