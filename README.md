@@ -1,2 +1,3 @@
 **DEPLOYMENT**
-[link]https://battleship-phi-seven.vercel.app/
+https://battleship-phi-seven.vercel.app/
+
