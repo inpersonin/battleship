@@ -4,6 +4,7 @@ Welcome to the **Battleship Game**! This project is a digital version of the cla
 
 ## 🛠️ Technologies Used
 
+- **Deployment**: [Play the game here!](https://battleship-phi-seven.vercel.app/) 🌐
 - **Programming Language**: Python 🐍
 - **Libraries**:
   - `pygame` for the graphical interface 🎮
