@@ -17,7 +17,6 @@ Welcome to the **Battleship Game**! This project is a digital version of the cla
 
 - **Interactive Gameplay**: Play against a smart AI opponent 🤖.
 - **Dynamic Graphics**: Smooth and visually appealing interface 🎨.
-- **Customizable Settings**: Adjust grid size and difficulty levels 🛠️.
 
 ## 🚧 Challenges Faced
 
@@ -29,3 +28,4 @@ Welcome to the **Battleship Game**! This project is a digital version of the cla
 
 This project is not just a game; it's a showcase of problem-solving, creativity, and coding skills. Whether you're a fan of Battleship or just love well-crafted games, this project is sure to impress! 🚀
 Enjoy the game and test your strategic skills! Challenge yourself against the AI and see if you can outwit it. May the best captain claim victory! 🏴‍☠️
+
