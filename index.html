@@ -7,13 +7,21 @@
 </head>
 <body>
   <h1>Battleship</h1>
+
+  <div class="falling-ships">
+    <span>🚢</span>
+    <span>🚢</span>
+    <span>🚢</span>
+    <span>🚢</span>
+  </div>
+
   <div class="boards">
-    <div>
-      <h2>Your Board</h2>
+    <div class="panel">
+      <h2>Player</h2>
       <div id="player-board" class="board"></div>
     </div>
-    <div>
-      <h2>Computer Board</h2>
+    <div class="panel">
+      <h2>Computer</h2>
       <div id="computer-board" class="board"></div>
     </div>
   </div>
@@ -24,9 +32,8 @@
     <div class="flash"></div>
     <div class="particles"></div>
   </div>
-  
 
   <script type="module" src="./gui.js"></script>
-
 </body>
+
 </html>

@@ -4,7 +4,7 @@ const player = new Player("Umar");
 const computer = new Player("Computer", true);
 
 function placeRandomShips(player) {
-  const lengths = [9, 6];
+  const lengths = [4, 3, 6];
   lengths.forEach((length) => {
     let placed = false;
     while (!placed) {
@@ -98,3 +98,61 @@ computerBoard.addEventListener("click", (e) => {
 
   checkWinner();
 });
+
+function createFallingObject(type = "ship") {
+  const container = document.querySelector(".falling-ships");
+  const obj = document.createElement("span");
+
+  obj.textContent = type === "ship" ? "⛴" : "🚀";
+  obj.classList.add(type);
+
+  obj.style.left = `${Math.random() * 95}%`;
+
+  const baseSize =
+    window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 1.5 : 2.5;
+  const size = type === "ship" ? 5 + Math.random() * 2 : 4 + Math.random();
+  obj.style.fontSize = `${size}rem`;
+
+  const duration =
+    type === "ship" ? 4 + Math.random() * 4 : 2 + Math.random() * 2;
+  obj.style.animationDuration = `${duration}s`;
+
+  container.appendChild(obj);
+  obj.addEventListener("animationend", () => obj.remove());
+}
+
+function spawnLoop() {
+  if (Math.random() < 0.75) createFallingObject("ship");
+  if (Math.random() < 0.5) createFallingObject("missile");
+  setTimeout(spawnLoop, 500);
+}
+
+function detectCollisions() {
+  const ships = document.querySelectorAll(".falling-ships .ship");
+  const missiles = document.querySelectorAll(".falling-ships .missile");
+
+  ships.forEach((ship) => {
+    const sRect = ship.getBoundingClientRect();
+    missiles.forEach((missile) => {
+      const mRect = missile.getBoundingClientRect();
+      const overlap = !(
+        sRect.top > mRect.bottom ||
+        sRect.bottom < mRect.top ||
+        sRect.left > mRect.right ||
+        sRect.right < mRect.left
+      );
+      if (overlap) {
+        ship.remove();
+        missile.remove();
+      }
+    });
+  });
+}
+
+function gameLoop() {
+  detectCollisions();
+  requestAnimationFrame(gameLoop);
+}
+
+spawnLoop();
+gameLoop();
